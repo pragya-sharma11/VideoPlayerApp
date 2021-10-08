@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            //on clicking button video should start and stop
             }
         });
 
