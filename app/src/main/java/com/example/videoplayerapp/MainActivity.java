@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
         b = findViewById(R.id.button);
         uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.a);
         v.setVideoURI(uri);
-
+        v.start();
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        v.start();
+
 
     }
 }
