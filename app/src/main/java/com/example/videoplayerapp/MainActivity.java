@@ -2,6 +2,7 @@ package com.example.videoplayerapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     MediaController m;
     Button b;
     boolean play = false;
+    Uri uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +22,15 @@ public class MainActivity extends AppCompatActivity {
         v = findViewById(R.id.videoView);
         m = new MediaController(this);
         b = findViewById(R.id.button);
-        v.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.a);
-        v.setMediaController(m);
-        m.setAnchorView(v);
+        uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.a);
+        v.setVideoURI(uri);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         v.start();
 
     }
